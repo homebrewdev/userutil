@@ -19,8 +19,6 @@ class User {
         self.soname = soname
         self.telNumber = telephoneNumber
     }
-    func add2Base() {
-    }
 }
 
 // MARK: - Console Class //класс консоль
