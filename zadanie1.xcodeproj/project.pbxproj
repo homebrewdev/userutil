@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE0A4AA122DCA17700EC427E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A4AA022DCA17700EC427E /* main.swift */; };
+		DE95BD0822DDA21A00091551 /* commandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B53C122DCAC8600EB7788 /* commandLine.swift */; };
+		DE95BD0922DDA21A00091551 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B53BF22DCA68B00EB7788 /* user.swift */; };
+		DE95BD0A22DDA21A00091551 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A4AA022DCA17700EC427E /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,15 +22,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		DE95BCFF22DDA1F100091551 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE0A4A9D22DCA17700EC427E /* zadanie1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zadanie1; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE0A4AA022DCA17700EC427E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DE0A4AA022DCA17700EC427E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../zadanie1/main.swift; sourceTree = "<group>"; };
+		DE95BD0122DDA1F100091551 /* userutil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = userutil; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9B53BF22DCA68B00EB7788 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		DE9B53C122DCAC8600EB7788 /* commandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commandLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DE0A4A9A22DCA17700EC427E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE95BCFE22DDA1F100091551 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +62,7 @@
 		DE0A4A9422DCA17700EC427E = {
 			isa = PBXGroup;
 			children = (
-				DE0A4A9F22DCA17700EC427E /* zadanie1 */,
+				DE95BD0222DDA1F100091551 /* userutil */,
 				DE0A4A9E22DCA17700EC427E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,16 +71,19 @@
 			isa = PBXGroup;
 			children = (
 				DE0A4A9D22DCA17700EC427E /* zadanie1 */,
+				DE95BD0122DDA1F100091551 /* userutil */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DE0A4A9F22DCA17700EC427E /* zadanie1 */ = {
+		DE95BD0222DDA1F100091551 /* userutil */ = {
 			isa = PBXGroup;
 			children = (
 				DE0A4AA022DCA17700EC427E /* main.swift */,
+				DE9B53BF22DCA68B00EB7788 /* user.swift */,
+				DE9B53C122DCAC8600EB7788 /* commandLine.swift */,
 			);
-			path = zadanie1;
+			path = userutil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +106,23 @@
 			productReference = DE0A4A9D22DCA17700EC427E /* zadanie1 */;
 			productType = "com.apple.product-type.tool";
 		};
+		DE95BD0022DDA1F100091551 /* userutil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE95BD0722DDA1F100091551 /* Build configuration list for PBXNativeTarget "userutil" */;
+			buildPhases = (
+				DE95BCFD22DDA1F100091551 /* Sources */,
+				DE95BCFE22DDA1F100091551 /* Frameworks */,
+				DE95BCFF22DDA1F100091551 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = userutil;
+			productName = userutil;
+			productReference = DE95BD0122DDA1F100091551 /* userutil */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +134,9 @@
 				ORGANIZATIONNAME = "Egor Devyatov";
 				TargetAttributes = {
 					DE0A4A9C22DCA17700EC427E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DE95BD0022DDA1F100091551 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -110,6 +154,7 @@
 			projectRoot = "";
 			targets = (
 				DE0A4A9C22DCA17700EC427E /* zadanie1 */,
+				DE95BD0022DDA1F100091551 /* userutil */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0A4AA122DCA17700EC427E /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE95BCFD22DDA1F100091551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE95BD0822DDA21A00091551 /* commandLine.swift in Sources */,
+				DE95BD0A22DDA21A00091551 /* main.swift in Sources */,
+				DE95BD0922DDA21A00091551 /* user.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +313,24 @@
 			};
 			name = Release;
 		};
+		DE95BD0522DDA1F100091551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		DE95BD0622DDA1F100091551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -276,6 +348,15 @@
 			buildConfigurations = (
 				DE0A4AA522DCA17700EC427E /* Debug */,
 				DE0A4AA622DCA17700EC427E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE95BD0722DDA1F100091551 /* Build configuration list for PBXNativeTarget "userutil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE95BD0522DDA1F100091551 /* Debug */,
+				DE95BD0622DDA1F100091551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
