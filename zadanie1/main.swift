@@ -8,11 +8,7 @@
 
 import Foundation
 
-
 // MARK: - Begin //начало проекта
-
-// массив хранения всех юзеров
-var userBase: Array<User> = [User(soname: "Admin", name: "Adm", telephoneNumber: "+7-989-999-8877")]
 
 let cmd = CmdLine()
 

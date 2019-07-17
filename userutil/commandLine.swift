@@ -30,16 +30,16 @@ class CmdLine {
         //3
         let (option, value) = getOption(argument.substring(from: argument.index(argument.startIndex, offsetBy: 1)))
         //4
-        consoleIO.writeMessage("аргумент: \(argCount) Ключ: \(option) Значение: \(value)")
+        consoleIO.writeMessage("аргумент: \(argCount) | команда: \(option) | значение ключа: -\(value)")
     
     switch option {
     // добавить пользователя
     case .addNewUser:
         if argCount != 5 {
             if argCount > 5 {
-                consoleIO.writeMessage("Слишком много аргументов для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Слишком много аргументов для ключа -\(option.rawValue)", to: .error)
             } else {
-                consoleIO.writeMessage("Указаны не все аргументы для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Указаны не все аргументы для ключа -\(option.rawValue)", to: .error)
             }
             consoleIO.printUsage()
         } else {
@@ -61,9 +61,9 @@ class CmdLine {
     case .deleteUser:
         if argCount != 3 {
             if argCount > 3 {
-                consoleIO.writeMessage("Слишком много аргументов для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Слишком много аргументов для ключа -\(option.rawValue)", to: .error)
             } else {
-                consoleIO.writeMessage("Указаны не все аргументы для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Указаны не все аргументы для ключа -\(option.rawValue)", to: .error)
             }
             consoleIO.printUsage()
         } else {
@@ -77,9 +77,9 @@ class CmdLine {
         
         if argCount != 2 {
             if argCount > 2 {
-                consoleIO.writeMessage("Слишком много аргументов для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Слишком много аргументов для ключа -\(option.rawValue)", to: .error)
             } else {
-                consoleIO.writeMessage("Указаны не все аргументы для ключа \(option.rawValue)", to: .error)
+                consoleIO.writeMessage("Указаны не все аргументы для ключа -\(option.rawValue)", to: .error)
             }
             consoleIO.printUsage()
         } else {
@@ -89,8 +89,7 @@ class CmdLine {
                 var i = 0
                 while i < index {
                     consoleIO.writeMessage("User: \(userDefaultsBase.string(forKey: String(i)) ?? "нет данных")")
-                    consoleIO.writeMessage("==========================")
-                        i += 1
+                    i += 1
                 }
             } else {
                 //список пользователей пуст
@@ -116,14 +115,13 @@ class CmdLine {
         
         let index = userDefaultsBase.integer(forKey: "index")
         
+        // запишем строку с фамилией именем и номером в UserDefaults
         userDefaultsBase.set(storedStr, forKey: String(index))
-        //userDefaultsBase.set(storedStr + " ggod", forKey: "user2")
-            
+        // запишем индекс нового юзера в UserDefaults
         userDefaultsBase.set(index+1, forKey: "index")
         
-        //userBase.append(newUser)
-        print("\(userDefaultsBase.integer(forKey: "index"))")
-        print(userDefaultsBase.string(forKey: String(index))!)
+        print("New index = \(userDefaultsBase.integer(forKey: "index"))")
+        print("Строка записанная в userDef \(userDefaultsBase.string(forKey: String(index))!)")
     }
     
 }
